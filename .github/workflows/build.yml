@@ -97,14 +97,15 @@ jobs:
             $pwd = ConvertTo-SecureString -String $env:PFX_PASSWORD -Force -AsPlainText
             Export-PfxCertificate -Cert $cert -FilePath package/cert.pfx -Password $pwd | Out-Null
             Export-Certificate -Cert $cert -FilePath package/out/ValueStreamMapper-TestCertificate.cer | Out-Null
-            Set-Content package/out/HOW-TO-INSTALL.txt @"
-This MSIX is signed with a self-signed TEST certificate (no MSIX_PFX_BASE64 secret was configured).
-To sideload it on a PC:
-  1. Double-click ValueStreamMapper-TestCertificate.cer → Install Certificate → Local Machine →
-     Place all certificates in the following store → Trusted People (or Trusted Root Certification Authorities).
-  2. Double-click ValueStreamMapper.msix → Install.
-Packages submitted to the Microsoft Store do NOT need this: the Store signs them with Microsoft's certificate.
-"@
+            $note = @(
+              "This MSIX is signed with a self-signed TEST certificate (no MSIX_PFX_BASE64 secret was configured).",
+              "To sideload it on a PC:",
+              "  1. Double-click ValueStreamMapper-TestCertificate.cer -> Install Certificate -> Local Machine ->",
+              "     Place all certificates in the following store -> Trusted People (or Trusted Root Certification Authorities).",
+              "  2. Double-click ValueStreamMapper.msix -> Install.",
+              "Packages submitted to the Microsoft Store do NOT need this: the Store signs them with Microsoft's certificate."
+            )
+            Set-Content package/out/HOW-TO-INSTALL.txt ($note -join "`r`n")
           }
           & "$env:SDKBIN\signtool.exe" sign /fd SHA256 /a /f package/cert.pfx /p $env:PFX_PASSWORD package/out/ValueStreamMapper.msix
           & "$env:SDKBIN\signtool.exe" verify /pa /v package/out/ValueStreamMapper.msix
