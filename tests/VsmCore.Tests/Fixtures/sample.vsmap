@@ -1,0 +1,297 @@
+{
+  "availableTimePerDay" : 27600,
+  "connections" : [
+    {
+      "fromID" : "0EDCF366-09CA-49E4-AF57-5E50FFDC8F0E",
+      "id" : "6180A69F-3302-4BCE-A8B6-22F39F23CC55",
+      "kind" : "electronicInfo",
+      "label" : "Orders",
+      "toID" : "9360D247-F46E-4F2F-83B3-A5CE365676F1"
+    },
+    {
+      "fromID" : "9360D247-F46E-4F2F-83B3-A5CE365676F1",
+      "id" : "963D5F12-4127-4A76-94F4-2058F3129959",
+      "kind" : "electronicInfo",
+      "label" : "Weekly fax",
+      "toID" : "84FAC50D-E969-41AA-9722-23FD480C5A63"
+    },
+    {
+      "fromID" : "9360D247-F46E-4F2F-83B3-A5CE365676F1",
+      "id" : "B20EAE15-CDCA-4569-AF1F-0CD7012B512E",
+      "kind" : "manualInfo",
+      "label" : "",
+      "toID" : "698BB2BC-6CAD-4ABF-A69F-B4FD825D5E78"
+    },
+    {
+      "fromID" : "698BB2BC-6CAD-4ABF-A69F-B4FD825D5E78",
+      "id" : "8F467212-7B8A-4491-A12B-1F2C7CE57EE0",
+      "kind" : "manualInfo",
+      "label" : "",
+      "toID" : "3DC6FCD3-2B1A-4143-B959-0432F6B734AB"
+    },
+    {
+      "fromID" : "698BB2BC-6CAD-4ABF-A69F-B4FD825D5E78",
+      "id" : "C1F09468-C5D7-49F9-8448-250E4C674C2D",
+      "kind" : "manualInfo",
+      "label" : "",
+      "toID" : "465575E7-AFEB-48AF-93BD-96178BD82F85"
+    },
+    {
+      "fromID" : "698BB2BC-6CAD-4ABF-A69F-B4FD825D5E78",
+      "id" : "21778E15-DAE5-4B20-B95E-363F31475ABB",
+      "kind" : "manualInfo",
+      "label" : "",
+      "toID" : "B4FE4DEF-8EFE-4B58-A170-4CC16443651A"
+    },
+    {
+      "fromID" : "84FAC50D-E969-41AA-9722-23FD480C5A63",
+      "id" : "AD31BF5D-648D-44A9-A163-963E5878995A",
+      "kind" : "materialFlow",
+      "label" : "",
+      "toID" : "B1A30354-22C6-4C82-A193-685E04E3449C"
+    },
+    {
+      "fromID" : "B1A30354-22C6-4C82-A193-685E04E3449C",
+      "id" : "BD5AE8FD-AD51-4D00-9847-7AD2D433D433",
+      "kind" : "push",
+      "label" : "",
+      "toID" : "3DC6FCD3-2B1A-4143-B959-0432F6B734AB"
+    },
+    {
+      "fromID" : "3DC6FCD3-2B1A-4143-B959-0432F6B734AB",
+      "id" : "E366407B-E3D5-4A77-97B2-875F78A437F9",
+      "kind" : "push",
+      "label" : "",
+      "toID" : "B05231EB-0E0F-4AFD-B7D3-F5A35321FE4D"
+    },
+    {
+      "fromID" : "B05231EB-0E0F-4AFD-B7D3-F5A35321FE4D",
+      "id" : "173C4319-E1D0-4490-8FBB-D197603F6BE2",
+      "kind" : "push",
+      "label" : "",
+      "toID" : "465575E7-AFEB-48AF-93BD-96178BD82F85"
+    },
+    {
+      "fromID" : "465575E7-AFEB-48AF-93BD-96178BD82F85",
+      "id" : "22F04B41-151C-4900-8F2D-C9F052FCD51A",
+      "kind" : "push",
+      "label" : "",
+      "toID" : "DEF0E405-9D47-480F-A59E-E513BBE27CA9"
+    },
+    {
+      "fromID" : "DEF0E405-9D47-480F-A59E-E513BBE27CA9",
+      "id" : "4BDFD069-4265-4C14-9D49-7EAD514E7C75",
+      "kind" : "push",
+      "label" : "",
+      "toID" : "B4FE4DEF-8EFE-4B58-A170-4CC16443651A"
+    },
+    {
+      "fromID" : "B4FE4DEF-8EFE-4B58-A170-4CC16443651A",
+      "id" : "734A10EF-4E3F-42F5-B180-A934B9934F24",
+      "kind" : "push",
+      "label" : "",
+      "toID" : "A2E639DC-5EA9-485D-868C-E8951D598629"
+    },
+    {
+      "fromID" : "A2E639DC-5EA9-485D-868C-E8951D598629",
+      "id" : "5D321624-0F61-40BC-8347-177C55FA1F7E",
+      "kind" : "materialFlow",
+      "label" : "",
+      "toID" : "77E0BAD9-2854-408A-8D49-D5C84D55527B"
+    },
+    {
+      "fromID" : "77E0BAD9-2854-408A-8D49-D5C84D55527B",
+      "id" : "75FBE956-6143-4D10-8A8F-BE0C6BC059B9",
+      "kind" : "materialFlow",
+      "label" : "",
+      "toID" : "0EDCF366-09CA-49E4-AF57-5E50FFDC8F0E"
+    }
+  ],
+  "createdAt" : "2026-10-23T17:49:00Z",
+  "customerDemandPerDay" : 460,
+  "elements" : [
+    {
+      "id" : "84FAC50D-E969-41AA-9722-23FD480C5A63",
+      "kind" : "supplier",
+      "metrics" : {
+        "frequency" : "2× week",
+        "isRework" : false,
+        "usesITSystem" : false
+      },
+      "name" : "Steel Co.",
+      "note" : "",
+      "x" : 140,
+      "y" : 140
+    },
+    {
+      "id" : "698BB2BC-6CAD-4ABF-A69F-B4FD825D5E78",
+      "kind" : "scheduleBox",
+      "metrics" : {
+        "isRework" : false,
+        "usesITSystem" : false
+      },
+      "name" : "Weekly Schedule",
+      "note" : "",
+      "x" : 700,
+      "y" : 130
+    },
+    {
+      "id" : "9360D247-F46E-4F2F-83B3-A5CE365676F1",
+      "kind" : "process",
+      "metrics" : {
+        "isRework" : false,
+        "usesITSystem" : true
+      },
+      "name" : "Production Control",
+      "note" : "",
+      "x" : 700,
+      "y" : 300
+    },
+    {
+      "id" : "0EDCF366-09CA-49E4-AF57-5E50FFDC8F0E",
+      "kind" : "customer",
+      "metrics" : {
+        "frequency" : "1× day",
+        "isRework" : false,
+        "usesITSystem" : false
+      },
+      "name" : "Assembly Plant",
+      "note" : "",
+      "x" : 1280,
+      "y" : 140
+    },
+    {
+      "id" : "B1A30354-22C6-4C82-A193-685E04E3449C",
+      "kind" : "inventory",
+      "metrics" : {
+        "inventoryQty" : 2300,
+        "isRework" : false,
+        "usesITSystem" : false
+      },
+      "name" : "Coils",
+      "note" : "",
+      "x" : 280,
+      "y" : 560
+    },
+    {
+      "id" : "3DC6FCD3-2B1A-4143-B959-0432F6B734AB",
+      "kind" : "process",
+      "metrics" : {
+        "changeoverTime" : 3600,
+        "cycleTime" : 1,
+        "epex" : "2 weeks",
+        "isRework" : false,
+        "operators" : 1,
+        "uptimePercent" : 85,
+        "usesITSystem" : false,
+        "valueCreatingTime" : 1
+      },
+      "name" : "Stamping",
+      "note" : "",
+      "x" : 440,
+      "y" : 560
+    },
+    {
+      "id" : "B05231EB-0E0F-4AFD-B7D3-F5A35321FE4D",
+      "kind" : "inventory",
+      "metrics" : {
+        "inventoryQty" : 1600,
+        "isRework" : false,
+        "usesITSystem" : false
+      },
+      "name" : "Stamped",
+      "note" : "",
+      "x" : 600,
+      "y" : 560
+    },
+    {
+      "id" : "465575E7-AFEB-48AF-93BD-96178BD82F85",
+      "kind" : "process",
+      "metrics" : {
+        "changeoverTime" : 600,
+        "cycleTime" : 39,
+        "isRework" : false,
+        "operators" : 1,
+        "uptimePercent" : 100,
+        "usesITSystem" : false,
+        "valueCreatingTime" : 35
+      },
+      "name" : "Welding",
+      "note" : "",
+      "x" : 760,
+      "y" : 560
+    },
+    {
+      "id" : "DEF0E405-9D47-480F-A59E-E513BBE27CA9",
+      "kind" : "inventory",
+      "metrics" : {
+        "inventoryQty" : 1100,
+        "isRework" : false,
+        "usesITSystem" : false
+      },
+      "name" : "Welded",
+      "note" : "",
+      "x" : 920,
+      "y" : 560
+    },
+    {
+      "id" : "B4FE4DEF-8EFE-4B58-A170-4CC16443651A",
+      "kind" : "process",
+      "metrics" : {
+        "cycleTime" : 46,
+        "isRework" : false,
+        "operators" : 2,
+        "uptimePercent" : 100,
+        "usesITSystem" : false,
+        "valueCreatingTime" : 40
+      },
+      "name" : "Assembly",
+      "note" : "",
+      "x" : 1080,
+      "y" : 560
+    },
+    {
+      "id" : "A2E639DC-5EA9-485D-868C-E8951D598629",
+      "kind" : "inventory",
+      "metrics" : {
+        "inventoryQty" : 2700,
+        "isRework" : false,
+        "usesITSystem" : false
+      },
+      "name" : "Finished",
+      "note" : "",
+      "x" : 1240,
+      "y" : 560
+    },
+    {
+      "id" : "77E0BAD9-2854-408A-8D49-D5C84D55527B",
+      "kind" : "truckShipment",
+      "metrics" : {
+        "frequency" : "1× day",
+        "isRework" : false,
+        "usesITSystem" : false
+      },
+      "name" : "Daily",
+      "note" : "",
+      "x" : 1360,
+      "y" : 420
+    },
+    {
+      "id" : "6C430101-E478-4CDE-A693-FEC57DF193A7",
+      "kind" : "kaizenBurst",
+      "metrics" : {
+        "isRework" : false,
+        "usesITSystem" : false
+      },
+      "name" : "C\/O < 10 min",
+      "note" : "Reduce stamping changeover with SMED to enable smaller batches.",
+      "x" : 440,
+      "y" : 400
+    }
+  ],
+  "id" : "56953A05-8C4F-44A2-94A0-98FCADCE3B96",
+  "modifiedAt" : "2026-10-23T17:49:00Z",
+  "productFamily" : "Steering brackets",
+  "state" : "Current State",
+  "title" : "Stamping Value Stream (Example)"
+}

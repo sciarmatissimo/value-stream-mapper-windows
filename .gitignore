@@ -1,0 +1,14 @@
+# .NET
+bin/
+obj/
+*.user
+*.suo
+.vs/
+TestResults/
+artifacts/
+publish/
+
+# macOS / editors
+.DS_Store
+.idea/
+*.swp

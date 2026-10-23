@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <LangVersion>latest</LangVersion>
+    <RootNamespace>VsmCore</RootNamespace>
+    <Description>Value-stream mapping domain model, analysis, import/export and flow simulation.</Description>
+  </PropertyGroup>
+
+</Project>
