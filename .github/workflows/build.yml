@@ -107,10 +107,18 @@ jobs:
             )
             Set-Content package/out/HOW-TO-INSTALL.txt ($note -join "`r`n")
           }
-          & "$env:SDKBIN\signtool.exe" sign /fd SHA256 /a /f package/cert.pfx /p $env:PFX_PASSWORD package/out/ValueStreamMapper.msix
-          & "$env:SDKBIN\signtool.exe" verify /pa /v package/out/ValueStreamMapper.msix
-          if ($LASTEXITCODE -ne 0) { Write-Host "Verify reports an untrusted chain — expected for a self-signed test certificate." }
+          if ($env:PFX_BASE64) {
+            & "$env:SDKBIN\signtool.exe" sign /fd SHA256 /tr http://timestamp.digicert.com /td SHA256 /f package/cert.pfx /p $env:PFX_PASSWORD package/out/ValueStreamMapper.msix
+            if ($LASTEXITCODE -ne 0) { exit 1 }
+            & "$env:SDKBIN\signtool.exe" verify /pa /v package/out/ValueStreamMapper.msix
+            if ($LASTEXITCODE -ne 0) { exit 1 }
+          } else {
+            & "$env:SDKBIN\signtool.exe" sign /fd SHA256 /f package/cert.pfx /p $env:PFX_PASSWORD package/out/ValueStreamMapper.msix
+            if ($LASTEXITCODE -ne 0) { exit 1 }
+            Write-Host "Signed with the self-signed test certificate; chain verification skipped (it is untrusted by design)."
+          }
           Remove-Item package/cert.pfx -Force
+          exit 0
       - name: Upload MSIX
         uses: actions/upload-artifact@v4
         with:
