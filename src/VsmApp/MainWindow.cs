@@ -78,7 +78,9 @@ public sealed class MainWindow : Window
 
         // Sidebar
         var sidebar = new DockPanel { Background = new SolidColorBrush(Color.FromRgb(246, 246, 249)) };
-        var header = new TextBlock { Text = "Value Streams", FontSize = 20, FontWeight = FontWeight.Bold, Margin = new Thickness(14, 14, 14, 8) };
+        var credit = new TextBlock { Text = "@Vincenzo Renzo", FontSize = 11, Foreground = Ui.InkSecondary, Margin = new Thickness(14, 8, 14, 0) };
+        DockPanel.SetDock(credit, Dock.Top);
+        var header = new TextBlock { Text = "Value Streams", FontSize = 20, FontWeight = FontWeight.Bold, Margin = new Thickness(14, 2, 14, 8) };
         DockPanel.SetDock(header, Dock.Top);
         var actions = new WrapPanel { Margin = new Thickness(10, 4, 10, 10), ItemWidth = 112, ItemHeight = 34 };
         actions.Children.Add(Btn("＋ New Map", async () => await NewMap()));
@@ -95,7 +97,7 @@ public sealed class MainWindow : Window
         DockPanel.SetDock(mapActions, Dock.Bottom);
         mapList.ItemTemplate = new FuncDataTemplate<ValueStreamMap>((m, _) => MapRow(m), true);
         mapList.SelectionChanged += (_, _) => { if (!suppressSelection && mapList.SelectedItem is ValueStreamMap m && m != map) Select(m); };
-        sidebar.Children.Add(header); sidebar.Children.Add(actions); sidebar.Children.Add(mapActions); sidebar.Children.Add(mapList);
+        sidebar.Children.Add(credit); sidebar.Children.Add(header); sidebar.Children.Add(actions); sidebar.Children.Add(mapActions); sidebar.Children.Add(mapList);
         root.Children.Add(sidebar);
 
         // Centre: toolbar + canvas + palette
