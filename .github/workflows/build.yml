@@ -3,8 +3,12 @@ name: Build & Test
 on:
   push:
     branches: [main]
+    tags: ['v*']
   pull_request:
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   windows:
@@ -30,14 +34,20 @@ jobs:
         with:
           name: ValueStreamMapper-win-x64
           path: publish/win-x64
-      - name: Upload UI screenshots
-        uses: actions/upload-artifact@v4
-        if: always()
+      - name: Zip for release
+        if: startsWith(github.ref, 'refs/tags/v')
+        shell: pwsh
+        run: Compress-Archive -Path publish/win-x64/* -DestinationPath ValueStreamMapper-win-x64.zip
+      - name: Attach to GitHub Release
+        if: startsWith(github.ref, 'refs/tags/v')
+        uses: softprops/action-gh-release@v2
         with:
-          name: ui-screenshots
-          path: tests/VsmApp.Tests/bin/Release/net8.0/screenshots
+          files: ValueStreamMapper-win-x64.zip
+          generate_release_notes: true
 
   msix:
+    # Built only when started manually from the Actions tab; the artifact expires after one day.
+    if: github.event_name == 'workflow_dispatch'
     runs-on: windows-latest
     needs: windows
     env:
@@ -124,3 +134,4 @@ jobs:
         with:
           name: ValueStreamMapper-msix
           path: package/out
+          retention-days: 1
